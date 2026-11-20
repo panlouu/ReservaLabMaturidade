@@ -1,5 +1,4 @@
 /* ReservaLab — identidade visual profissional */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
 
 :root {
   --navy: #10243e;
@@ -17,6 +16,10 @@
   --red: #b64a4a;
   --red-bg: #fff0ef;
   --shadow: 0 12px 34px rgba(16, 36, 62, .055);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 * { box-sizing: border-box; }
