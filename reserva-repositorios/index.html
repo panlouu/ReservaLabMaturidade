@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Protótipo de consulta e reserva de laboratórios acadêmicos.">
+  <title>Reserva de Laboratórios | UNINASSAU</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="ReservaLab - início">
+      <span class="brand-mark">RL</span>
+      <span>Reserva<span class="brand-light">Lab</span><small>GESTÃO DE LABORATÓRIOS</small></span>
+    </a>
+    <span class="topbar-tag">Protótipo acadêmico</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">UNINASSAU · SISTEMA ACADÊMICO</p>
+        <h1>Encontre o espaço ideal<br><span>para sua próxima aula.</span></h1>
+        <p class="hero-copy">Consulte a disponibilidade dos laboratórios e solicite uma reserva de forma simples.</p>
+      </div>
+      <div class="hero-symbol" aria-hidden="true">⌂</div>
+    </section>
+
+    <section class="section" aria-labelledby="labs-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / CONSULTA</p><h2 id="labs-title">Laboratórios</h2></div>
+        <span class="section-note">Situação e capacidade</span>
+      </div>
+      <div class="lab-grid" id="laboratory-list"></div>
+      <p class="rule-note"><strong>Regra de reserva:</strong> para aulas regulares, somente laboratórios disponíveis com capacidade igual ou superior a 30 alunos podem ser selecionados.</p>
+    </section>
+
+    <section class="content-grid">
+      <section class="panel reservation-panel" aria-labelledby="reservation-title">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">02 / SOLICITAÇÃO</p><h2 id="reservation-title">Nova reserva</h2></div>
+          <span class="step-number">01</span>
+        </div>
+        <form id="reservation-form" novalidate>
+          <div class="field">
+            <label for="professor">Nome do professor</label>
+            <input id="professor" name="professor" type="text" placeholder="Digite seu nome completo" required>
+          </div>
+          <div class="field">
+            <label for="registration">Matrícula</label>
+            <input id="registration" name="registration" type="text" placeholder="Ex.: 01234567" required>
+          </div>
+          <div class="field">
+            <label for="laboratory">Laboratório</label>
+            <select id="laboratory" name="laboratory" required>
+              <option value="">Selecione um laboratório</option>
+            </select>
+            <small class="field-hint">Laboratórios indisponíveis ou com menos de 30 lugares não podem ser reservados.</small>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="date">Data</label>
+              <input id="date" name="date" type="date" required>
+            </div>
+            <div class="field">
+              <label for="time">Horário</label>
+              <input id="time" name="time" type="time" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="purpose">Finalidade da reserva</label>
+            <textarea id="purpose" name="purpose" rows="3" placeholder="Descreva a aula ou atividade" required></textarea>
+          </div>
+          <button class="primary-button" type="submit">Confirmar solicitação <span aria-hidden="true">→</span></button>
+          <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="panel bookings-panel" aria-labelledby="bookings-title">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">03 / ACOMPANHAMENTO</p><h2 id="bookings-title">Reservas realizadas</h2></div>
+          <span class="booking-count" id="booking-count">0</span>
+        </div>
+        <div id="reservation-list" class="reservation-list">
+          <div class="empty-state">
+            <span class="empty-icon">▤</span>
+            <h3>Nenhuma reserva ainda</h3>
+            <p>As solicitações confirmadas aparecerão aqui durante esta execução da página.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <footer>
+      <span>ReservaLab <span class="footer-dot">•</span> Protótipo desenvolvido para atividade de UML e Requisitos</span>
+      <span>HTML · CSS · JavaScript</span>
+    </footer>
+  </main>
+</body>
+</html>
